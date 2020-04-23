@@ -103,24 +103,13 @@ def requires_auth(f):
 
 
 def tag_color(tag):
-    num = hash(tag) % 8
-    if num == 0:
-        return "primary"
-    elif num == 1:
-        return "secondary"
-    elif num == 2:
-        return "success"
-    elif num == 3:
-        return "danger"
-    elif num == 4:
-        return "warning"
-    elif num == 5:
-        return "info"
-    elif num == 6:
-        return "light"
-    elif num == 7:
-        return "dark"
-
+    # r: low 8 bit
+    # g: 8 .. 15
+    # b: 16 .. 23
+    r = int(hash(tag)) % 8
+    g = int(hash(tag)/256) % 8
+    b = int(hash(tag)/65536) % 8
+    return "#{0:x}{1:x}{2:x}".format(r, g, b)
 
 def build_tags_color_lookup():
     color_lookup = {}

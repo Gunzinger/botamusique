@@ -208,7 +208,8 @@
                                             <label class="col-sm-2 col-form-label">Tags</label>
                                             <div class="col-sm-10" style="padding-top:5px;">
                                                 {% for tag in tags_color_lookup.keys() %}
-                                                    <span id="filter-tag" class="filter-tag tag-unclicked tag-click badge badge-{{ tags_color_lookup[tag] }}">{{ tag }}</span>
+                                                    <span id="filter-tag" class="filter-tag tag-unclicked tag-click badge"
+                                                          style="background-color:{{ tags_color_lookup[tag] }};">{{ tag }}</span>
                                                 {% endfor %}
                                             </div>
                                         </div>
@@ -542,7 +543,7 @@
                 item.tags.forEach(function (tag_tuple){
                     tag_copy = tag_element.clone();
                     tag_copy.html(tag_tuple[0]);
-                    tag_copy.addClass("badge-" + tag_tuple[1]);
+                    tag_copy.css("background-color", tag_tuple[1]);
                     tag_copy.appendTo(tags);
                 });
             }else{
@@ -928,7 +929,7 @@
                 item.tags.forEach(function (tag_tuple){
                     tag_copy = tag_element.clone();
                     tag_copy.html(tag_tuple[0]);
-                    tag_copy.addClass("badge-" + tag_tuple[1]);
+                    tag_copy.css("background-color", tag_tuple[1]);
                     tag_copy.appendTo(tags);
                 });
             }else{
