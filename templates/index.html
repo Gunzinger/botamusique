@@ -178,8 +178,8 @@
                                         <div id="filter-type" class="form-group row">
                                             <label class="col-sm-2 col-form-label">Type</label>
                                             <div class="btn-group btn-group-toggle" data-toggle="buttons" style="height: 35px; padding-top:5px;">
-                                                <button type="button" id="filter-type-file" class="btn btn-secondary btn-sm" onclick="setFilterType('file')">File</button>
-                                                <button type="button" id="filter-type-url" class="btn btn-secondary btn-sm" onclick="setFilterType('url')">URL</button>
+                                                <button type="button" id="filter-type-file" class="btn btn-primary btn-sm active" onclick="setFilterType('file')">File</button>
+                                                <button type="button" id="filter-type-url" class="btn btn-primary btn-sm active" onclick="setFilterType('url')">URL</button>
                                                 <button type="button" id="filter-type-radio" class="btn btn-secondary btn-sm" onclick="setFilterType('radio')">Radio</button>
                                             </div>
                                         </div>
@@ -772,8 +772,8 @@
         // ---------------------
         // ------ Browser ------
         // ---------------------
-        var filter_file = false;
-        var filter_url = false;
+        var filter_file = true;
+        var filter_url = true;
         var filter_radio = false;
         var filter_dir = $("#filter-dir");
         var filter_keywords = $("#filter-keywords");
